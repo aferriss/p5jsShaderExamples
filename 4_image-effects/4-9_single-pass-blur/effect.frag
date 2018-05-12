@@ -1,0 +1,44 @@
+precision mediump float;
+
+// lets grab texcoords just for fun
+varying vec2 vTexCoord;
+
+// our texture coming from p5
+uniform sampler2D tex0;
+uniform vec2 texelSize;
+
+void main() {
+
+  vec2 uv = vTexCoord;
+  // the texture is loaded upside down and backwards by default so lets flip it
+  uv = 1.0 - uv;
+
+  // a single pass blur works by sampling all the neighbor pixels and averaging them up
+  // this is somewhat inefficient because we have to sample the texture 9 times -- texture2D calls are slow :( 
+  // check out the two-pass-blur example for a better blur approach
+  // get the webcam as a vec4 using texture2D
+
+  // spread controls how far away from the center we should pull a sample from
+  float spread = 4.0;
+
+  // create our offset variable by multiplying the size of a texel with spread
+  vec2 offset = texelSize * spread;
+
+  // get all the neighbor pixels!
+  vec4 tex = texture2D(tex0, uv); // middle middle -- the actual texel / pixel
+  tex += texture2D(tex0, uv + vec2(-offset.x, -offset.y)); // top left
+  tex += texture2D(tex0, uv + vec2(0.0, -offset.y)); // top middle
+  tex += texture2D(tex0, uv + vec2(offset.x, -offset.y)); // top right
+
+  tex += texture2D(tex0, uv + vec2(-offset.x, 0.0)); //middle left
+  tex += texture2D(tex0, uv + vec2(offset.x, 0.0)); //middle right
+
+  tex += texture2D(tex0, uv + vec2(-offset.x, offset.y)); // bottom left
+  tex += texture2D(tex0, uv + vec2(0.0, offset.y)); // bottom middle
+  tex += texture2D(tex0, uv + vec2(offset.x, offset.y)); // bottom right
+
+  // divide by 9 (this averages the texture out)
+  tex /= 9.0;
+
+  gl_FragColor = tex;
+}
