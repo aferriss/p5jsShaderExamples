@@ -6,8 +6,6 @@ varying vec2 vTexCoord;
 // our texture coming from p5
 uniform sampler2D tex0;
 
-
-
 void main() {
 
   vec2 uv = vTexCoord;

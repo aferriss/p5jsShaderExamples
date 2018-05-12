@@ -1,4 +1,4 @@
-// in this sketch we're going to turn the camera image into a pixellated mosaic
+// in this sketch we're going to convert rgb to hsb in the shader
 
 // the shader variable
 let camShader;
@@ -31,6 +31,9 @@ function draw() {
 
   // lets just send the cam to our shader as a uniform
   camShader.setUniform('tex0', cam);
+
+  // send a time variable to the shader
+  camShader.setUniform('time', frameCount * 0.01);
 
   // rect gives us some geometry on the screen
   rect(0,0,width, height);
