@@ -6,6 +6,8 @@ precision mediump float;
 // the fragment shader has one main function too
 // this is kinda of like the draw() function in p5
 // main outputs a variable called gl_FragColor which will contain all the colors of our shader
+// the word void means that the function doesn't return a value
+// this function is always called main()
 void main() {
 
   // lets just send the color red out
