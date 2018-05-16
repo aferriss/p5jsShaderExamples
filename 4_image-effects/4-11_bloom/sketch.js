@@ -1,18 +1,24 @@
-// in this sketch we're going to use two passes with different shaders to create an efficient gaussian blur
+// in this sketch we're going to use three passes with different shaders to create a bloom effect
+// this example is the same as the two - pass blur, but takes it one extra step 
+// bloom is a look where the brightest things in the scene have an extra bit of glow or bleed to them
+// you often see it at night when staring at bright streetlights
 
 // the shader variables
-// we will have one shader that blurs horizontally, and one that blurs vertically
-let blurH, blurV;
+// we will have one shader that blurs horizontally, and one that blurs vertically, and one for the bloom
+let blurH, blurV, bloom;
+
 // the camera variable
 let cam;
 
-// we need two createGraphics layers for our blur algorithm
-let pass1, pass2;
+// we need three createGraphics layers for our blur algorithm
+let pass1, pass2, bloomPass;
 
 function preload(){
   // load the shaders, we will use the same vertex shader and frag shaders for both passes
   blurH = loadShader('base.vert', 'blur.frag');
   blurV = loadShader('base.vert', 'blur.frag');
+  bloom = loadShader('base.vert', 'bloom.frag');
+
 }
 
 function setup() {
@@ -31,11 +37,12 @@ function setup() {
   // initialize the createGraphics layers
   pass1 = createGraphics(windowWidth, windowHeight, WEBGL);
   pass2 = createGraphics(windowWidth, windowHeight, WEBGL);
+  bloomPass = createGraphics(windowWidth, windowHeight, WEBGL);
 
   // turn off the cg layers stroke
   pass1.noStroke();
   pass2.noStroke();
-  
+  bloomPass.noStroke();
 }
 
 function draw() {  
@@ -66,8 +73,21 @@ function draw() {
   // again, make sure we have some geometry to draw on in our 2nd pass
   pass2.rect(0,0,width, height);
 
+  // set the bloom shader for the bloom pass
+  bloomPass.shader(bloom);
+
+  // send both the camera and the blurred camera to the bloom shader
+  bloom.setUniform('tex0', cam);
+  bloom.setUniform('tex1', pass2);
+
+  // also send the mouse to control the amount of bloom
+  bloom.setUniform('mouseX', mouseX/width);
+
+  // we need some geometry for the bloom pass
+  bloomPass.rect(0,0,width, height);
+
   // draw the second pass to the screen
-  image(pass2, 0,0, width, height);
+  image(bloomPass, 0,0, width, height);
   
 }
 
