@@ -76,7 +76,7 @@ This section is a collection of shaders that manipulate images or video in some 
 7. [Displacement Map](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-7_displacement-map)
 8. [RGB to HSB conversion](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-8_rgb-to-hsb)
 9. [Single Pass Blur](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-9_single-pass-blur)
-10. [Multi-Pass Blur](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-10_to-pass-blur)
+10. [Multi-Pass Blur](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-10_two-pass-blur)
 11. [Bloom](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-11_bloom)
 12. [Threshold](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-12_threshold)
 13. [Frame Differencing](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-13_frame-differencing)
