@@ -6,21 +6,13 @@ A collection of heavily commented 2d shaders in p5.js. I tried to write shaders 
 
 There are only 4 functions you need to know to work with shaders in p5.js. Everything else is just learning the shader language GLSL.
 
-1. [loadShader('vertexShader.vert', 'fragmentShader.frag')](https://p5js.org/reference/#/p5/loadShader)  
+1. [loadShader('vertexShader.vert', 'fragmentShader.frag')](https://p5js.org/reference/#/p5/loadShader) loads your shaders from files and returns them as a p5 shader object in a variable. The file extensions don't really matter, you can call them .glsl or .shader or .vertex. What does matter is that the path to the files is correct. loadShader() should be called from within preload().
 
-loadShader() loads your shaders from files and returns them as a p5 shader object in a variable. The file extensions don't really matter, you can call them .glsl or .shader or .vertex. What does matter is that the path to the files is correct. loadShader() should be called from within preload().
+2. [createShader(vertString, fragString)](https://p5js.org/reference/#/p5/createShader) loads your shaders from strings. I prefer not to work this way because you won't have any syntax highlighting on your shaders. You can call this method from within setup. The easiest way to write shaders as strings is probably to use javascripts template string syntax.
 
-2. [createShader(vertString, fragString)](https://p5js.org/reference/#/p5/createShader)
+3. [shader(myShader)](https://p5js.org/reference/#/p5.Shader) sets the currently active shader. You can also call this function on createGraphics() layers if you have them in your scene.
 
-createShader() loads your shaders from strings. I prefer not to work this way because you won't have any syntax highlighting on your shaders. You can call this method from within setup. The easiest way to write shaders as strings is probably to use javascripts template string syntax.
-
-3. [shader(myShader)](https://p5js.org/reference/#/p5.Shader)
-
-shader() sets the currently active shader. You can also call this function on createGraphics() layers if you have them in your scene.
-
-4. [setUniform('uniformName', dataGoingToShader)](https://p5js.org/reference/#/p5.Shader/setUniform)
-
-This is the only method of the shader object in p5. You can use it to send data to your shaders from your p5 program. For the vec# data types, you send the data as an array. Here's how to send different types of data  
+4. [setUniform('uniformName', dataGoingToShader)](https://p5js.org/reference/#/p5.Shader/setUniform) is the only method of the shader object in p5. You can use it to send data to your shaders from your p5 program. For the vec# data types, you send the data as an array. Here's how to send different types of data  
 
 ````
 // sending an int
