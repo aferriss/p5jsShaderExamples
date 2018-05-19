@@ -83,7 +83,7 @@ This section is a collection of shaders that manipulate images or video in some 
 14. [RGB to Grayscale conversion](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-14_rgb-to-grayscale)
 15. [Convolution Kernel Effects (Blur, Sharpen, Emboss, Edge Detect)](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-15_convolution-kernel)
 16. [Video Feedback](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-16_video-feedback)
-
+17. [Texture Delay](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-17_delay)
 
 ## Shapes  
 
