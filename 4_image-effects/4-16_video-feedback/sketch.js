@@ -49,6 +49,8 @@ function draw() {
   // send mouseIsPressed to the shader as a int (either 0 or 1)
   camShader.setUniform('mouseDown', int(mouseIsPressed));
 
+  camShader.setUniform('time', frameCount * 0.01);
+
   // rect gives us some geometry on the screen
   shaderLayer.rect(0,0,width, height);
 
@@ -57,6 +59,9 @@ function draw() {
 
   // render the shaderlayer to the screen
   image(shaderLayer, 0,0,width, height);
+
+  textSize(24);
+  text("Click to bring in new frames", 50,50);
 }
 
 function windowResized(){
