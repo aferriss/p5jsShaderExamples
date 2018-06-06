@@ -85,6 +85,8 @@ This section is a collection of shaders that manipulate images or video in some 
 16. [Video Feedback](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-16_video-feedback)
 17. [Texture Delay](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-17_delay)  
 18. [Discard](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-18_discard)
+19. [Slitscan](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-19_slitscan)
+20. [Fly's Eye Mosaic](https://aferriss.github.io/p5jsShaderExamples/4_image-effects/4-20_mosaic)
 
 ## Shapes  
 
