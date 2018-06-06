@@ -27,7 +27,7 @@ void main() {
   if(avg > 0.5){
     discard;
   }
-
+  
   // render the output
   gl_FragColor = cam;
 }
