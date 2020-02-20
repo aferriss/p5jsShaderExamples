@@ -95,3 +95,11 @@ These shaders show how to create basic shapes just using math within the shader.
 1. [Rectangle](https://aferriss.github.io/p5jsShaderExamples/5_shapes/5-1_rectangle)
 2. [Circle](https://aferriss.github.io/p5jsShaderExamples/5_shapes/5-2_circle)
 3. [Polygon](https://aferriss.github.io/p5jsShaderExamples/5_shapes/5-3_polygon)
+
+## 3d
+
+These examples show how to use shaders with 3d geometry
+1. [Box](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-1_rectangle)
+2. [Vertex Displacement](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-2_vertexDisplacement)
+3. [Vertex Displacement With Texture](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-3_vertexDisplacementFromTexture)
+4. [Matcap Shader](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-3_matcap)
