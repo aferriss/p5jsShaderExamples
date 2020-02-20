@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "@types/p5": {
+      "version": "0.9.0",
+      "resolved": "https://registry.npmjs.org/@types/p5/-/p5-0.9.0.tgz",
+      "integrity": "sha512-GhI0ctGdKlnf1oUEYqE+sTWuGHhjQCZXQPxazdI9Lx2eE6z7qO6T55FGFenOY3wpL8jSzLWRmt83RHGblr4AWg=="
+    }
+  }
+}
