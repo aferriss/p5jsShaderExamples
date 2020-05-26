@@ -102,4 +102,4 @@ These examples show how to use shaders with 3d geometry
 1. [Box](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-1_rectangle)
 2. [Vertex Displacement](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-2_vertexDisplacement)
 3. [Vertex Displacement With Texture](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-3_vertexDisplacementFromTexture)
-4. [Matcap Shader](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-3_matcap)
+4. [Matcap Shader](https://aferriss.github.io/p5jsShaderExamples/6_3d/6-4_matcap)
