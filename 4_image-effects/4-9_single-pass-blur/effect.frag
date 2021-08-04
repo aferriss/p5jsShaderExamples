@@ -11,7 +11,7 @@ void main() {
 
   vec2 uv = vTexCoord;
   // the texture is loaded upside down and backwards by default so lets flip it
-  uv = 1.0 - uv;
+  uv = vec2(uv.x, 1.0 - uv.y);
 
   // a single pass blur works by sampling all the neighbor pixels and averaging them up
   // this is somewhat inefficient because we have to sample the texture 9 times -- texture2D calls are slow :( 
